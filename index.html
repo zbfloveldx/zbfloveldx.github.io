@@ -2,10 +2,12 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="wedding.css">
+		<script type="text/javascript" src="js/jquery.min.js"></script>
 	</head>
 	<body>
 		<div class="w-t">
 			<div class="w-t-m">老婆，嫁给我好吗？</div>
+			<div class="w-t-m" style="margin-top:40px;"><span style="font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;爱你的第<span id="dayTotal" style="color :red;"></span>天</span></div>
 			<img src="png/boom.png" alt="" class="boom1">
 			<img src="png/boom.png" alt="" class="boom2">
 			<img src="png/boom.png" alt="" class="boom3">
@@ -38,4 +40,12 @@
 			<img src="png/flowers2.png" alt="">
 		</div>
 	</body>
+	<script>
+	$(function(){
+	  var time=Date.parse(new Date());
+      var lasttime=Date.parse("2018-03-03");
+      var day=parseInt((time-lasttime)/(1000*60*60*24));
+	  $("#dayTotal").html(day+1);
+	})
+	</script>
 </html>
